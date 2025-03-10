@@ -9,7 +9,7 @@ defmodule HologramSkeleton.Application do
   def start(_type, _args) do
     children = [
       HologramSkeletonWeb.Telemetry,
-      HologramSkeleton.Repo,
+      # HologramSkeleton.Repo,
       {DNSCluster, query: Application.get_env(:hologram_skeleton, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: HologramSkeleton.PubSub},
       # Start the Finch HTTP client for sending emails
