@@ -9,7 +9,8 @@ defmodule HologramSkeleton.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      compilers: Mix.compilers() ++ [:hologram]
     ]
   end
 
@@ -24,8 +25,8 @@ defmodule HologramSkeleton.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_), do: ["lib"]
+  defp elixirc_paths(:test), do: ["app", "lib", "test/support"]
+  defp elixirc_paths(_), do: ["app", "lib"]
 
   # Specifies your project dependencies.
   #
@@ -57,7 +58,8 @@ defmodule HologramSkeleton.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:hologram, "~> 0.3.0"}
     ]
   end
 

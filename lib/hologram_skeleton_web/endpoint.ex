@@ -1,5 +1,8 @@
 defmodule HologramSkeletonWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :hologram_skeleton
+  use Hologram.Endpoint
+  
+  hologram_socket()
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -23,7 +26,7 @@ defmodule HologramSkeletonWeb.Endpoint do
     at: "/",
     from: :hologram_skeleton,
     gzip: false,
-    only: HologramSkeletonWeb.static_paths()
+    only: ["hologram" | HologramSkeletonWeb.static_paths()]
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -49,5 +52,7 @@ defmodule HologramSkeletonWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  
+  plug Hologram.Router
   plug HologramSkeletonWeb.Router
 end
