@@ -15,7 +15,7 @@ To start your Hologram application:
 
 1. Clone this repository
    ```bash
-   git clone https://github.com/bartblast/hologram-skeleton.git
+   git clone https://github.com/bartblast/hologram_skeleton.git
    cd hologram_skeleton
    ```
 
