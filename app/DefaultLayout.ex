@@ -2,7 +2,7 @@ defmodule HologramSkeleton.DefaultLayout do
   use Hologram.Component
   
   def template do
-    ~H"""
+    ~HOLO"""
     <!DOCTYPE html>
     <html>
       <head>
