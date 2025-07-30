@@ -37,3 +37,6 @@ npm-debug.log
 
 # Hologram generated JavaScript bundles.
 /priv/static/hologram/
+
+# macOS folder metadata.
+.DS_Store
